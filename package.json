@@ -1,0 +1,23 @@
+{
+  "name": "socialnetworkapi",
+  "version": "1.0.0",
+  "description": "An application utilizing mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joshuamun97/SocialNetworkAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joshuamun97/SocialNetworkAPI/issues"
+  },
+  "homepage": "https://github.com/Joshuamun97/SocialNetworkAPI#readme",
+  "dependencies": {
+    "moment": "^2.29.4",
+    "mongoose": "6.9"
+  }
+}
