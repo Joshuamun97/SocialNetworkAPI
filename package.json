@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Joshuamun97/SocialNetworkAPI#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "moment": "^2.29.4",
     "mongoose": "6.9"
   }

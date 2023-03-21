@@ -1,5 +1,5 @@
 const {Schema, model} = require('mongoose');
-import { isEmail } from 'validator';
+// import { isEmail } from 'validator';
 
 const userSchema = new Schema (
 {
@@ -13,12 +13,32 @@ const userSchema = new Schema (
         type: String,
         required: true,
         unique: true,
-        validate: [ isEmail, 'invalid email' ]
+        // validate: [ isEmail, 'invalid email' ]
     },
-    thoughts: [thoughtSchema],
+    // thoughts: [thoughtSchema],
+    thoughts: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "Thought",
+        },
+        ],
     // thoughts-Array of _id values referencing the Thought model
-    friends: [userSchema],
+    // friends: [userSchema],
+    friends: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "User",
+        },
+      ],
+    },
+    {
+      toJSON: {
+        virtuals: true,
+      },
+      id: false,
+    }
+  );
     // friends-Array of _id values referencing the User model (self-reference)
-});
+
 
 // create a virtual called friendCount that retrieves the length of the user's friends array field on query.
