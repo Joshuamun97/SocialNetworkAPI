@@ -40,14 +40,27 @@ const thoughtSchema = new Schema(
             type: String,
             required: true,
         },
+        userId: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "User",
+            },
+        ],
         reactions: [reactionSchema],
+
+    },
+    {
+        toJSON: {
+            virtuals: true
+        },
+        id: false,
+
     });
 
-    thoughtSchema.virtual('reactionCount')
-    .get(function() {
+thoughtSchema.virtual('reactionCount')
+    .get(function () {
         return this.reactions.length;
     })
-    
-    const Thought = model('Thought', thoughtSchema);
-    module.exports = Thought;
-    
+
+const Thought = model('Thought', thoughtSchema);
+module.exports = Thought;
