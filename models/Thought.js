@@ -1,11 +1,11 @@
-const { Schema, model } = require('mongoose');
+const { Schema, Types,model } = require('mongoose');
 const moment = require('moment');
 
 const reactionSchema = new Schema(
     {
         reactionId: {
-            // Use Mongoose's ObjectId data type
-            // Default value is set to a new ObjectId
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId()
         },
         reactionBody: {
             type: String,
